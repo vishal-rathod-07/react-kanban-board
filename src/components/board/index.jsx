@@ -114,7 +114,7 @@ const KanbanBoard = ({ onTaskMove }) => {
 
     return (
       <div className="column">
-        <h2>{title}</h2>
+        <h2 className="column-heading">{title}</h2>
         <div className="task-list" ref={drop}>
           {tasks.map(task => (
             <Task task={task} key={task.id} column={columnName} />
@@ -126,6 +126,7 @@ const KanbanBoard = ({ onTaskMove }) => {
 
   return (
     <DndProvider backend={HTML5Backend}>
+    <h1 className="app-title">Kanban Pro</h1>
     <form onSubmit={addTask}>
           <label>
             Task Name:

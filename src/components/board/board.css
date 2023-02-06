@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+
+body {
+  background-color: #ECEBE4 !important;
+}
+.app-title{
+  font-family: 'Lobster Two', cursive;
+  color: #1C1C1C;
+  font-size: 50px;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
 .kanban-board {
   display: flex;
 }
@@ -5,8 +19,22 @@
 .column {
   flex: 1;
   border: 1px solid #ccc;
-  padding: 10px;
   margin: 10px;
+  background-color: #EEF0F2;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.column-heading{
+  background-color: #FAFAFF;
+  margin: 0;
+  border-bottom: 1px solid #ccc;
+  font-family: 'Lobster Two', cursive;
+  color: #1C1C1C;
+}
+
+.column-heading, .task-list {
+  padding: 10px;
 }
 
 .task-list {
@@ -15,11 +43,15 @@
 
 .task {
   padding: 10px;
-  margin: 10px 0;
-  background: #f9f9f9;
+  /* background: #f9f9f9; */
+  background: #DADDD8;
   border: 1px solid #ccc;
   border-radius: 5px;
   position: relative;
+}
+
+.task + .task {
+  margin-top: 10px;
 }
 
 .task:hover .btn-delete-task {
@@ -37,6 +69,8 @@ form {
 form label {
   margin-right: 10px;
   flex: 1 1 100%;
+  font-family: 'Lobster Two', cursive;
+
 }
 
 form input[type="text"], 
@@ -57,6 +91,7 @@ form button[type="submit"] {
   border: none;
   cursor: pointer;
   margin-left: 10px;
+  font-family: 'Lobster Two', cursive;
 }
 
 .btn-delete-task {
