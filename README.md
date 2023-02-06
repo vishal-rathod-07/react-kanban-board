@@ -10,6 +10,16 @@ Features
 *   Move tasks between columns by dragging and dropping.
 *   Three columns available: "To Do", "In Progress", and "Done".
 *   Uses the `react-dnd` library for drag and drop functionality.
+*   Tasks are stored in local storage, so they persist between refreshes
+*   Delete tasks with a click of a button
+
+Technologies used
+-----------------
+
+*   React
+*   React DnD for drag and drop functionality
+*   HTML5 backend for React DnD
+*   CSS for styling
 
 Usage
 -----
@@ -30,6 +40,11 @@ Dependencies
 *   React
 *   react-dnd
 *   react-dnd-html5-backend
+
+Contributing
+------------
+
+This project is open for contributions. If you would like to contribute, please create a pull request.
 
 Screenshots
 -----------
