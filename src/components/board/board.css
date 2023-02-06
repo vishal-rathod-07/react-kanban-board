@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
 
 body {
-  background-color: #ECEBE4 !important;
+  background-color: #333 !important;
 }
-.app-title{
+.app-title {
   font-family: 'Lobster Two', cursive;
-  color: #1C1C1C;
+  color: #fff;
   font-size: 50px;
   text-align: center;
   margin: 0;
@@ -17,41 +17,44 @@ body {
 }
 
 .column {
+  display: flex;
+  flex-direction: column;
   flex: 1;
-  border: 1px solid #ccc;
+  border: 1.5px solid #ffffff;
   margin: 10px;
-  background-color: #EEF0F2;
+  background-color: #ebecf0;
   border-radius: 10px;
   overflow: hidden;
+  padding: 0px 10px 30px 10px;
+  gap: 20px;
 }
 
-.column-heading{
-  background-color: #FAFAFF;
+.column-heading {
   margin: 0;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1.5px solid #fff;
   font-family: 'Lobster Two', cursive;
-  color: #1C1C1C;
-}
-
-.column-heading, .task-list {
-  padding: 10px;
+  color: #1c1c1c;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  padding: 10px 0;
 }
 
 .task-list {
   min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .task {
   padding: 10px;
-  /* background: #f9f9f9; */
-  background: #DADDD8;
   border: 1px solid #ccc;
-  border-radius: 5px;
   position: relative;
-}
-
-.task + .task {
-  margin-top: 10px;
+  background: #ffffff;
+  box-shadow: 0px 3px 0px #b2b8c4;
+  border-radius: 9px;
 }
 
 .task:hover .btn-delete-task {
@@ -70,10 +73,10 @@ form label {
   margin-right: 10px;
   flex: 1 1 100%;
   font-family: 'Lobster Two', cursive;
-
+  color: #fff;
 }
 
-form input[type="text"], 
+form input[type='text'],
 form select {
   padding: 4px;
   border: 1px solid #ccc;
@@ -83,9 +86,9 @@ form select {
   flex: 1 1 100%;
 }
 
-form button[type="submit"] {
+form button[type='submit'] {
   padding: 4px 16px;
-  background: #4CAF50;
+  background: #4caf50;
   color: #fff;
   border-radius: 5px;
   border: none;
@@ -105,22 +108,21 @@ form button[type="submit"] {
   font: 700 21px/20px sans-serif;
   background: #555;
   border: 3px solid #fff;
-  color: #FFF;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 2px 4px rgba(0,0,0,0.3);
-    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-    -webkit-transition: background 0.5s;
-    transition: background 0.5s;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  -webkit-transition: background 0.5s;
+  transition: background 0.5s;
 }
 
 .btn-delete-task:hover {
-  background: #E54E4E;
+  background: #e54e4e;
   padding: 3px 7px 5px;
   top: -11px;
   right: -11px;
 }
 .btn-delete-task:active {
-  background: #E54E4E;
+  background: #e54e4e;
   top: -10px;
   right: -11px;
 }
-

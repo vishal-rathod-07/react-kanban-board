@@ -6,6 +6,7 @@ function App() {
     { name: 'todo', title: 'To Do' },
     { name: 'in-progress', title: 'In Progress' },
     { name: 'done', title: 'Done' },
+    { name: 'archive', title: 'Archive' },
   ];
 
   const handleTaskMove = (task, from, to) => {
