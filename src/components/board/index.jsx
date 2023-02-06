@@ -14,17 +14,25 @@ const KanbanBoard = ({ onTaskMove, columns: columnsData }) => {
     try {
       const state = localStorage.getItem("kanban-board-state");
       if (state) {
-        setColumns(JSON.parse(state));
+        const parsedState = JSON.parse(state);
+        const columns = {};
+        columnsData.forEach(column => {
+          columns[column.name] = parsedState[column.name] || [];
+        });
+        setColumns(columns);
+      } else {
+        // initialize columns with empty arrays
+        const initialColumns = {};
+        columnsData.forEach(column => {
+          initialColumns[column.name] = [];
+        });
+        setColumns(initialColumns);
       }
     } catch (error) {
       console.error(error);
     }
 
-    let updatedColumns = {};
-    columnsData.forEach(col => {
-      updatedColumns[col.name] = [];
-    });
-    setColumns(updatedColumns);
+    
   }, [columnsData]);
 
   useEffect(() => {
@@ -118,9 +126,9 @@ const KanbanBoard = ({ onTaskMove, columns: columnsData }) => {
       <div className="column">
         <h2 className="column-heading">{title}</h2>
         <div className="task-list" ref={drop}>
-          {tasks.length > 0 ? tasks.map(task => (
+          {tasks?.map(task => (
             <Task task={task} key={task.id} column={columnName} />
-          )): null}
+          ))}
         </div>
       </div>
     );
