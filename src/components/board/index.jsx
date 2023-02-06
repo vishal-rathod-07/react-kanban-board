@@ -5,12 +5,8 @@ import {HTML5Backend} from "react-dnd-html5-backend";
 
 import "./board.css";
 
-const KanbanBoard = ({ onTaskMove }) => {
-  const [columns, setColumns] = useState({
-    todo: [],
-    inProgress: [],
-    done: []
-  });
+const KanbanBoard = ({ onTaskMove, columns: columnsData }) => {
+  const [columns, setColumns] = useState({});
 
   const [newTask, setNewTask] = useState({ name: "", column: "todo" });
 
@@ -23,7 +19,13 @@ const KanbanBoard = ({ onTaskMove }) => {
     } catch (error) {
       console.error(error);
     }
-  }, []);
+
+    let updatedColumns = {};
+    columnsData.forEach(col => {
+      updatedColumns[col.name] = [];
+    });
+    setColumns(updatedColumns);
+  }, [columnsData]);
 
   useEffect(() => {
     try {
@@ -116,9 +118,9 @@ const KanbanBoard = ({ onTaskMove }) => {
       <div className="column">
         <h2 className="column-heading">{title}</h2>
         <div className="task-list" ref={drop}>
-          {tasks.map(task => (
+          {tasks.length > 0 ? tasks.map(task => (
             <Task task={task} key={task.id} column={columnName} />
-          ))}
+          )): null}
         </div>
       </div>
     );
@@ -140,18 +142,24 @@ const KanbanBoard = ({ onTaskMove }) => {
           <label>
             Column:
             <select value={newTask.column} onChange={handleColumnChange}>
-              <option value="todo">To Do</option>
-              <option value="inProgress">In Progress</option>
-              <option value="done">Done</option>
+              {
+                columnsData.map(col => (
+                  <option key={col.name} value={col.name}>{col.title}</option>
+                ))
+              }
             </select>
           </label>
           <button type="submit">Add Task</button>
         </form>
       <div className="kanban-board">
-        <Column title="To Do" tasks={columns.todo} columnName="todo" />
-        <Column title="In Progress" tasks={columns.inProgress} columnName="inProgress" />
-        <Column title="Done" tasks={columns.done} columnName="done" />
-        
+      {columnsData.map(col => (
+        <Column
+          key={col.name}
+          title={col.title}
+          tasks={columns[col.name]}
+          columnName={col.name}
+        />
+      ))}
       </div>
     </DndProvider>
   );
