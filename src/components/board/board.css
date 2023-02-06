@@ -1,0 +1,65 @@
+.kanban-board {
+  display: flex;
+}
+
+.column {
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+}
+
+.task-list {
+  min-height: 100px;
+}
+
+.task {
+  padding: 10px;
+  margin: 10px 0;
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 10px;
+  flex-direction: row;
+}
+
+form label {
+  margin-right: 10px;
+  flex: 1 1 100%;
+}
+
+form input[type="text"], 
+form select {
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-left: 8px;
+  flex: 1 1 100%;
+}
+
+form button[type="submit"] {
+  padding: 4px 16px;
+  background: #4CAF50;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.delete-button{
+  background: red;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 50%;
+  float: right;
+  cursor: pointer;
+}
+
