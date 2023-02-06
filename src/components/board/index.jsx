@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDrag, useDrop } from "react-dnd";
 import { DndProvider } from "react-dnd";
 import {HTML5Backend} from "react-dnd-html5-backend";
@@ -13,6 +13,25 @@ const KanbanBoard = ({ onTaskMove }) => {
   });
 
   const [newTask, setNewTask] = useState({ name: "", column: "todo" });
+
+  useEffect(() => {
+    try {
+      const state = localStorage.getItem("kanban-board-state");
+      if (state) {
+        setColumns(JSON.parse(state));
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }, []);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("kanban-board-state", JSON.stringify(columns));
+    } catch (error) {
+      console.error(error);
+    }
+  }, [columns]);
 
   const handleTaskChange = (e) => {
     setNewTask({
