@@ -56,6 +56,13 @@ const KanbanBoard = ({ onTaskMove }) => {
     });
   };
 
+  const deleteTask = (task, columnName) => {
+      setColumns(prevColumns => {
+      prevColumns[columnName] = prevColumns[columnName].filter(t => t !== task);
+        return { ...prevColumns };
+      });
+    };
+
   const Task = ({ task, column }) => {
     const [, drag] = useDrag({
       type: "task",
@@ -67,9 +74,10 @@ const KanbanBoard = ({ onTaskMove }) => {
     return (
       <div className="task" ref={drag}>
         {task.name}
+        <button className="btn-delete-task" onClick={() => deleteTask(task, column)}>X</button>
       </div>
-    );     
-  };
+    );
+    };
 
   const Column = ({ title, tasks, columnName }) => {
     const [, drop] = useDrop({
