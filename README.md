@@ -45,8 +45,3 @@ Contributing
 ------------
 
 This project is open for contributions. If you would like to contribute, please create a pull request.
-
-Screenshots
------------
-
-![Kanban Board](screenshots/kanban-board.png)
