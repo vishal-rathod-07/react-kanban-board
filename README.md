@@ -17,6 +17,7 @@ Here're some of the project's best features:
 *   Create new tasks with a name and column.
 *   Move tasks between columns by dragging and dropping.
 *   Four columns available: "To Do" "In Progress" "Done" and "Archive".
+    *   The "Archive" column is used to store tasks that are no longer active but need to be kept for record-keeping purposes. Tasks moved to this column are considered completed and are not included in the active workflow.
 *   Uses the react-dnd library for drag and drop functionality.
 *   Tasks are stored in local storage so they persist between refreshes
 *   Delete tasks with a click of a button
