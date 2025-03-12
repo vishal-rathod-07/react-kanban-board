@@ -1,4 +1,4 @@
-<h1 align="center" id="title">Kanban Board</h1>
+<h1 align="center" id="title">Kanban Pro</h1>
 
 <p align="center"><img src="https://socialify.git.ci/vishal-rathod-07/react-kanban-board/image?language=1&amp;owner=1&amp;name=1&amp;stargazers=1&amp;theme=Light" alt="project-image"></p>
 
@@ -16,7 +16,8 @@ Here're some of the project's best features:
 
 *   Create new tasks with a name and column.
 *   Move tasks between columns by dragging and dropping.
-*   Three columns available: "To Do" "In Progress" and "Done".
+*   Four columns available: "To Do" "In Progress" "Done" and "Archive".
+    *   The "Archive" column is used to store tasks that are no longer active but need to be kept for record-keeping purposes. Tasks moved to this column are considered completed and are not included in the active workflow.
 *   Uses the react-dnd library for drag and drop functionality.
 *   Tasks are stored in local storage so they persist between refreshes
 *   Delete tasks with a click of a button
