@@ -1,5 +1,6 @@
-import './App.css';
 import KanbanBoard from './components/board';
+
+import './App.css';
 
 function App() {
   const columns = [
