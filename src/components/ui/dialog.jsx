@@ -49,16 +49,18 @@ export function DialogContent({ className = '', children, ...props }) {
   );
 }
 
-export function DialogHeader({ className = '', ...props }) {
+export function DialogHeader({ className = '', children, ...props }) {
   return (
     <div
       className={cn('flex flex-col space-y-1.5 border-b px-6 py-4', className)}
       {...props}
-    />
+    >
+      {children}
+    </div>
   );
 }
 
-export function DialogTitle({ className = '', ...props }) {
+export function DialogTitle({ className = '', children, ...props }) {
   return (
     <h2
       className={cn(
@@ -66,15 +68,19 @@ export function DialogTitle({ className = '', ...props }) {
         className
       )}
       {...props}
-    />
+    >
+      {children}
+    </h2>
   );
 }
 
-export function DialogDescription({ className = '', ...props }) {
+export function DialogDescription({ className = '', children, ...props }) {
   return (
     <p
       className={cn('text-sm text-muted-foreground', className)}
       {...props}
-    />
+    >
+      {children}
+    </p>
   );
 }
